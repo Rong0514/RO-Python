@@ -28,7 +28,6 @@ for i in range(103,112):
     n1     = str(i)
     select.select_by_value(n1)
     
-    
     for i in range(1,13):
         select = Select(browser.find_element(By.ID,'Lotto649Control_history_dropMonth'))# 找到下拉式選單(月份)
         n2     = str(i)
@@ -41,14 +40,11 @@ for i in range(103,112):
         
         time.sleep(3)                                                          # 強制等待3秒再執行下一步
         
-        
-        
         soup   = BeautifulSoup(data,'html.parser')
   
         good   = soup.select_one('table',id='Lotto649Control_history_dlQuery')
         trss   = good.find_all('tr')[0]
         table  = trss.find('table',class_='table_org td_hm')
-        
         
         dates  = table.find_all('tr')[1]
         date   = dates.find('span' , id='Lotto649Control_history_dlQuery_L649_DDate_0')
@@ -58,7 +54,6 @@ for i in range(103,112):
         title = trs.find('td' ,class_="td_org2")
         print(title.text.strip() + ': ' , end='')
         
-        
         tds    = trs.find_all('td',class_='td_w font_black14b_center')
         for td in tds:
             print(td.text,end=' ')
@@ -67,8 +62,4 @@ for i in range(103,112):
         print('特 別 號 : '+red.text)
         print()
         
-        
 browser.close()
-
-
-
