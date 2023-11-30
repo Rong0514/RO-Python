@@ -122,13 +122,7 @@ def compute(city,area,street):
                           )
         break
     
-    
-    
-    
 city     = input("請輸入想搜尋的縣市：")
 area     = input("請輸入想搜尋的鄉鎮[市]區：")
 street   = input("請輸入想搜尋的路(街)名或鄉里：")
 compute(city, area, street)
-
-
- 
