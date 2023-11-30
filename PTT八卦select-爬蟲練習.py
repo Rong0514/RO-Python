@@ -6,9 +6,7 @@ Created on Tue Nov 14 16:35:34 2023
 """
 
 import requests
-
 from bs4 import BeautifulSoup
-
 from datetime import datetime
 
 def PPT(search):
@@ -24,11 +22,11 @@ def PPT(search):
                'yes': 'yes'
                }                                         # payload 要求
     
-    session = requests.session()                         # 以session方式做請求
+    session = requests.session()                         # 以session方式做保持連接
     
     url1    = 'https://www.ptt.cc/ask/over18'            # 請求的網址
     
-    session.post(url1,headers = header , data = payload) # 將網址、要求、代理用戶以session.post方式送回去
+    session.post(url1,headers = header , data = payload) # 將網址、要求、標頭以session.post方式送回去
     
     '''________________________________傳送第二次請求__抓取當前網頁資訊________________________________'''
         
@@ -77,7 +75,6 @@ def PPT(search):
                             #輸出content內容以upsplit切割並抓取索引值1 二次切割dowsplit並抓取索引值0
                 print(time.text)
                 print("_"*45)
-
 
 search = input("輸入搜尋: ")
 PPT(search)
