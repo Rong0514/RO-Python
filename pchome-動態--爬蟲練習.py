@@ -18,15 +18,15 @@ driver.implicitly_wait(10)                                                     #
 product = input("輸入想搜尋商品名稱:")
 driver.get("https://ecshweb.pchome.com.tw/search/v3.3/?q="+product)            # 使用driver 抓取網址
 
-data = driver.page_source                                                      # page_source 原始碼 , html解析
+data = driver.page_source                                                      # 使用.page_soucre解析
 
 for i in range(100):
     
-    driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')     # 執行 JavaScript - 滑動到底
+    driver.execute_script('window.scrollTo(0,document.body.scrollHeight)')     # 滑動到底部載入所有資料
     
-    time.sleep(3)                                                              # 強制等待3秒再執行下一步                      
+    time.sleep(3)                                                              # 強制等待3秒確保抓取完整資料                 
     
-    soup = BeautifulSoup(data,'html.parser')                                   # 帶入Beatifulsoup 解析
+    soup = BeautifulSoup(data,'html.parser')                                   # 帶入BeautifulSoup 用 html.parser解析 
     
     titles = soup.select('h5.prod_name a')
     prices = soup.select('span.value')
@@ -35,10 +35,3 @@ for i in range(100):
         print("標題: ", title.text)
         print('價格: $'+ price.text+'NT')
         print()
-    
-
-
-
-
-
-
