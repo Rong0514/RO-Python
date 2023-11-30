@@ -14,34 +14,34 @@ import json
 
 import re
 
-url    =  'https://tw.buy.yahoo.com/search/product'        # 請求的網址
+url    =  'https://tw.buy.yahoo.com/search/product'                            # 請求的網址
 
 header = {
     'User-Agent':
 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'
-    }                                                      # 瀏覽器代理用戶(標頭)
+    }                                                                          # 瀏覽器代理用戶(標頭)
     
-param  = {}                                                #HTTP請求的參數
+param  = {}                                                                    #HTTP要求的參數
 p = input('請輸入查詢的商品：')
 param['p'] = p                                                  
 
 '''________________________________傳送第一次請求__抓取當前網頁資訊________________________________'''
 
-data   = requests.get(url,params=param,headers=header).text# 將網址、請求參數、標頭以requests.get方式送回去
+data   = requests.get(url,params=param,headers=header).text                    # 將網址、請求參數、標頭以requests.get方式送回去
 
 soup   = BeautifulSoup(data,'html.parser')
 
 ul     = soup.find(id='isoredux-data')
 
-item   = ul.string                         #在HTML元素只有一個子節點時返回文字，有多個子節點返回None
+item   = ul.string                                                             #在HTML元素只有一個子節點時返回文字，有多個子節點返回None
 
-pattern = 'window.ISO_REDUX_DATA='         #正規表達式(要被取代內容)
+pattern = 'window.ISO_REDUX_DATA='                                             #正規表達式(要被取代內容)
 
-uls    = re.sub(pattern,'', item)          #re.sub(被取代,取代,原字串) > 較彈性
+uls    = re.sub(pattern,'', item)                                              #re.sub(被取代,取代,原字串) > 較彈性
 
-uls    = uls.replace(";",'')               #.replace(被取代,取代) > 較固定
+uls    = uls.replace(";",'')                                                   #.replace(被取代,取代) > 較固定
 
-goods  = json.loads(uls)                   # json.load = 讀取、json.loads = 解析
+goods  = json.loads(uls)                                                       # json.load = 讀取、json.loads = 解析
 
 searchgoods = goods['search']['ecsearch']['hits']
 
