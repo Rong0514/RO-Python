@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="{{ url_for('static',filename = 'css/Base.css') }}">
+		{% block title %}
+		{% endblock %}
+
+	{% block css %}
+	{% endblock %}
+
+	{% block js %}
+	{% endblock %}
+</head>
+<body>
+
+<div id = 'banners'>
+	<div id = 'leftlogo'>
+		<a href="https://github.com/Rong0514"><img src="{{ url_for('static',filename = 'img/S3.jpg') }}"></a>
+	</div>
+
+	<div id = 'rightmenu'>
+		<ul>
+			<li><a href="/home">Home</a></li>
+			<li><a href="/ifoods">愛食記</a></li>
+			<li><a href="/jpfoods">食べログ</a></li>
+			<li><a href="/travel">國外旅遊</a></li>
+			<li><a href="/contact">contact</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div id = 'content'>
+
+	<div style="clear: both;margin-top: 20px;"></div>
+
+	{% block Content %}
+	{% endblock %}
+
+</div>
+
+<div id = 'footer'>
+	RONG
+</div>
+
+
+</body>
+</html>

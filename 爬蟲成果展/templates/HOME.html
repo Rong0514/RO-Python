@@ -1,0 +1,55 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'css/HOME.css') }}">
+{% endblock %}
+
+
+
+
+{% block Content %}
+
+	<div class = L>
+		{% for row in jpfoods %}
+			<div class = l>
+				<a href="{{row.1}}" target="_blank"><img src="{{row.2}}"></a>  
+				<p>{{row.0}}</p>
+				<p>評價: {{row.3}} ★</p>
+			</div>
+		{% endfor %}
+	</div>	
+
+	<div class = C1>
+		{% for row in ifoods1 %}
+			<div class = c>
+				<a href="{{row.1}}" target="_blank"><img src="{{row.2}}"></a>       
+				<p>{{row.0}}</p>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class = C2>
+		{% for row in ifoods2 %}
+			<div class = c>
+				<a href="{{row.1}}" target="_blank"><img src="{{row.2}}"></a>       
+				<p>{{row.0}}</p>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class = R>
+		{% for row in travel %}
+			<div class = r>
+				<a href="{{row.1}}" target="_blank"><img src="{{row.2}}"></a>           
+				<p>{{row.0}}</p>
+			</div>
+		{% endfor %}
+	</div>
+	
+{% endblock %}
+
+
+

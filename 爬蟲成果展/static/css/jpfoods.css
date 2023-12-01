@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F2E4DC;
+}
+
+#form {
+	width: 100%;
+	min-height: 10px;
+}
+
+#foods {
+	width: 100%;
+	min-height: 100px;
+}
+
+.food {
+    width: 16%;
+    min-height: 230px;
+    float: left;
+    text-align: center;
+    margin-left: 9px;
+}
+.food img {
+	border-radius: 5%;
+}
+
+.food p {
+	margin: 0;
+}

@@ -1,0 +1,37 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+{% endblock %}
+
+
+{% block css %}
+	<link rel="stylesheet" href="{{ url_for('static',filename = 'css/jpfoods.css') }}">
+{% endblock %}
+
+
+{% block Content %}
+
+
+<div id = 'form'>
+	<form action="" method="get">
+		地名 : <input type="text" name="p"/>
+		<input type="submit" name="查詢" >
+		<p></p>
+	</form>
+</div>
+
+
+<div id = 'foods'>
+	{% for row in jpfood %} 													   
+		<div class = 'food'>
+			<a href="{{row.1}}" target="_blank"><img src="{{row.2}}"></a>  
+			<p>{{row.4}}{{row.0}}</p>
+			<p>評價: {{row.3}} ★</p>
+		</div>
+	{% endfor %}															        
+</div>
+
+{% endblock %}
+
+
+

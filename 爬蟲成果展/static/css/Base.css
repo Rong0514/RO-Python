@@ -1,0 +1,72 @@
+body,html {
+	height: 100%;
+	width: 100%;
+}
+a{
+	text-decoration: none;
+	color: #000000;
+}
+
+a:active{
+	color: #ffffff;
+}
+
+img{
+	transform: scale(1,1);
+	transition:all 1s ease-out;
+}
+img:hover{
+	transform: scale(1.1,1.1);
+}
+
+/*_____________________________________________________________*/
+
+#banners{
+	background-color: #D9BCA3;
+	width: 100%;
+	height: 80px;
+}
+
+#leftlogo{
+	width: 20%;
+	height: 80px;
+	float: left;
+}
+#leftlogo img{
+	width: auto;
+	height: 80%;
+	margin-left: 5em;
+	margin-top: 10px;
+	border-radius: 100px;
+}
+#rightmenu{
+	width: 80%;
+	height: 80px;
+	float: right;
+}
+#rightmenu ul{
+	margin: 0;
+}
+#rightmenu li{
+	float: left;
+	list-style: none;
+	line-height: 80px;
+	padding-right: 2em;
+	color: #000000;
+}
+/*_____________________________________________________________*/
+#footer {
+	clear: both;
+	height: 30px;
+	width: 100%;
+	background: #000;
+	color: #fff;
+	text-align: center;  /*整體至中*/
+}
+/*_____________________________________________________________*/
+
+#content{
+	min-height:400px;
+	width: 100%;
+}
+

@@ -1,0 +1,53 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = 'css/ifoods.css') }}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<style>
+        /* 在这里添加您的CSS样式以覆盖Bootstrap的样式 */
+        body {
+            background-color: #F2E4DC;
+            margin:0;
+   			padding:0;
+        	}
+        a{
+		 	text-decoration: none;
+			color: #000000;
+			}
+
+		a:active{
+				color: #ffffff;
+				}
+    </style>
+{% endblock %}
+
+
+
+{% block Content %}
+	<div class = 'haha'>
+		<div style="clear: both; height: 50px">
+			<div style="margin-left:38%">{{ pagination.links }}</div>
+		</div>
+	</div>
+
+
+	<div id = foods>
+		{% for row in ifood %}
+			<div class = 'food'>
+				<a href="{{row.1}}" target="_blank"><img src="{{row.2}}"></a>       
+				<p>{{row.0}}<p>
+				<p>{{row.3}}</p>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class = 'haha'>
+		<div style="clear: both; height: 50px">
+			<div style="margin-left:38%">{{ pagination.links }}</div>
+		</div>
+	</div>
+
+{% endblock %}

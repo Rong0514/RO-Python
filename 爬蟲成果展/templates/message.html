@@ -1,0 +1,51 @@
+{% extends 'Base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="{{ url_for('static',filename = 'css/message.css') }}">
+{% endblock %}
+
+{% block Content %}
+	<div style="margin-top: 50px"></div>
+
+	<div id = "message">
+
+		<p class = 'subject' style="text-align: center; font-size:28px; margin: 0; ">聯絡我們</p>
+
+		<form class = 'contact_form' action="addcontact" method="post">
+			<div class = 'form-group'>
+				<label>標題 : </label>
+				<input type="text" name="title" class = 'form_control' required/>
+			</div>
+		
+		
+			<div class = 'form-group'>
+				<label>姓名 : </label>
+				<input type="text" name="name" class = 'form_control' required/>
+			</div>
+
+			<div class = 'form-group'>
+				<label>信箱 : </label>
+				<input type="email" name="email" class = 'form_control' required/>
+			</div>
+
+			<div class = 'form-group'>
+				<label>內容 : </label>
+				<textarea name="content" rows="10" class = 'form_control' required/></textarea>
+			</div>
+
+			<div class = 'form-group'>
+				<button type="submit" class = 'btn_submit'>送出訊息</button>
+			</div>
+		</form>
+	</div>
+
+	<div id = 'right'>
+		<form>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10298.281390728116!2d120.67670290041156!3d24.136908447558596!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d146c6308b3%3A0x5ee3ca50643b34d0!2z6IGv5oiQ6Zu76IWmLeWPsOS4reermeWJjeiqjeitieS4reW_gyB8IOWtuOmbu-iFpiB8IOioreioiOijnOe_kuePrQ!5e0!3m2!1szh-TW!2stw!4v1701333329272!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</form>
+	</div>
+	
+{% endblock %}

@@ -1,0 +1,71 @@
+body{
+	margin:0;
+	padding:0;
+	background-color: #F2E4DC;
+}
+
+
+/*______________________左邊______________________*/
+.L {
+    margin-left: 3.5%;
+    width: 12%;
+    min-height: 100px;
+    text-align: center;
+    float: left;
+}
+
+.l img {
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+    margin-top: 25px;
+}
+
+.l p {
+	margin:0;
+}
+
+/*______________________中間______________________*/
+
+.C1 {
+width: 25%;
+    min-height: 100px;
+    text-align: center;
+    float: left;
+    margin-left: 80px;
+}
+
+.C2 {
+    width: 25%;
+    min-height: 100px;
+    text-align: center;
+    float: left;
+    margin-left: 30px;;
+}
+
+.c {
+    width: 90%;
+    min-height: 100px;
+    text-align: center;
+}
+
+.c img {
+	width: 100%;
+    height: auto;
+    border-radius: 5%;
+}
+
+/*______________________右邊______________________*/
+
+.R {
+    width: 20%;
+    min-height: 100px;
+    text-align: center;
+    float: left;
+    margin-left: 50px;
+}
+.r img {
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+}
